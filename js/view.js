@@ -46,11 +46,13 @@ $(function () {
     
 });
 });
-$(function () {
-
+$(document).ready(function(){
+    if(typeof(Storage) == "undefined") { 
+        alert("Not storage support");
+    }
 $("#btnAddToCart").click(function() {
-    
-    quantity: $('#quantity').val()
+    localStorage.setItem("quan'", $("#quantity").val());
+    window.location="patment.html";
     
   
 });

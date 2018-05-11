@@ -28,16 +28,16 @@ $(function () {
     $.ajax({
 
         //CP3. Complete Ajax code to GET the selected pin (pinid)  
-        url: 'https://pacific-peak-27279.herokuapp.com/api/ProductReview',
+        url: 'https://api-payment.herokuapp.com/api/payment',
         type: 'GET'
        
 
     }).then(function (data) {
         
         for (var i = 0; i < data.length; i++) {
-            if(parseInt(data[i].productID)===parseInt(pinid)){
-        var row = '<tr><td>' + data[i].rating + '</a></td><td>' + data[i].comment + 
-            '</td><td>' + data[i].date + '</td><td>'+ data[i].reviewer + '</td></tr>';
+            if(parseInt(data[i].userId)===parseInt(pinid)){
+        var row = '<tr><td>' + data[i].orderId + '</a></td><td>' + data[i].webName + 
+            '</td><td>' + data[i].price + '</td><td>'+ data[i].dateTime + '</td></tr>';
     
          $('#two').append(row);
         }
