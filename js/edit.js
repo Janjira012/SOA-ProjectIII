@@ -21,16 +21,17 @@ $(function () {
     $.ajax({
 
         //CP3. Complete Ajax code to GET the selected pin (pinid)  
-        url: 'http://psupin.azurewebsites.net/pins/'+ pinid,
+        url: 'https://soaproductapi.herokuapp.com/products/'+ pinid,
         type: 'GET'
 
 
     }).then(function (data) {
 
         $('#name').val(data.Name);
-        $('#title').val(data.title);
-        $('#desc').val(data.description);
-        $('#likes').val(data.likes);
+        $('#description').val(data.description);
+        $('#photo').val(data.photo);
+        $('#price').val(data.price);
+        $('#weight').val(data.weight);
 
     });
 
@@ -38,9 +39,11 @@ $(function () {
 
         var formdata = {
             Name: $('#name').val(),
-            title: $('#title').val(),
-            description: $('#desc').val(),
-            likes: $('#likes').val(),
+            description: $('#description').val(),
+            photo: $('#photo').val(),
+            price: $('#price').val(),
+            weight: $('#weight').val(),
+
         }
 
         console.log(formdata);
@@ -48,7 +51,7 @@ $(function () {
         $.ajax({
 
             // CP4. Complete Ajax code to UPDATE the selected pin (pinid)  
-            url: 'http://psupin.azurewebsites.net/pins/'+ pinid,
+            url: 'https://soaproductapi.herokuapp.com/products/'+ pinid,
             type: 'PUT',
             data:formdata
 
@@ -66,7 +69,7 @@ $(function () {
         $.ajax({
 
             //CP5. Complete Ajax code to DELETE the selected pin (pinid)  
-            url: 'http://psupin.azurewebsites.net/pins/'+ pinid,
+            url: 'https://soaproductapi.herokuapp.com/products/'+ pinid,
             type: 'DELETE'
 
         }).then(function (data) {

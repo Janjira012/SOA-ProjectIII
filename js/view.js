@@ -19,7 +19,7 @@ $(function () {
         url: 'https://soaproductapi.herokuapp.com/products/'+ pinid,
         type: 'GET'
     }).then(function (data) {
-        var row = '<tr><td><a href="view.html?id=' + data.id + '">' + data.name + '</a></td><td>' + data.description + 
+        var row = '<tr><td><a href="edit.html?id=' + data.id + '">' + data.name + '</a></td><td>' + data.description + 
             '</td><td><img  class="card-img-top"  src="' +data.photo + '"></td><td>'
             + data.price + '</td><td>'+ data.weight + '</td></tr>'; 
          $('#one').append(row);
